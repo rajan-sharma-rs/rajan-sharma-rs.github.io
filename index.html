@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajan Sharma, CPA - Senior Public Sector Audit & Fiscal Oversight Leader</title>
+    <meta name="description" content="Official portfolio for Rajan Sharma, CPA. Thirty years of public audit as nation-building fiscal oversight within the Ontario Ministry of Finance.">
+    
+    <style>
+        /* DESIGN SYSTEM COLOR SPECIFICATION & VARIABLES */
+        :root {
+            --primary-navy: #0A2240;
+            --burgundy-accent: #7A0016;
+            --muted-gold: #A68A56;
+            --canvas-bg: #F8F9FA;
+            --surface-white: #FFFFFF;
+            --charcoal-text: #1A1A1A;
+            --border-slate: #E5E7EB;
+            
+            /* Fluid Typography Variables */
+            --font-heading: Georgia, "Times New Roman", Times, serif;
+            --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-mono: "Courier New", Courier, monospace;
+        }
+
+        /* HIGH CONTRAST MODE OVERRIDES */
+        body.high-contrast {
+            --primary-navy: #FFFFFF;
+            --burgundy-accent: #FFFF00;
+            --muted-gold: #FFFF00;
+            --canvas-bg: #000000;
+            --surface-white: #000000;
+            --charcoal-text: #FFFFFF;
+            --border-slate: #FFFFFF;
+        }
+
+        body.high-contrast * {
+            box-shadow: none !important;
+        }
+        
+        body.high-contrast .hero-image-container {
+            background: #000000;
+            border: 3px solid #FFFF00;
+        }
+
+        /* RESET & BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--canvas-bg);
+            color: var(--charcoal-text);
+            line-height: 1.6;
+            font-size: 1.0625rem; /* 17px */
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4, .brand-name {
+            font-family: var(--font-heading);
+            color: var(--primary-navy);
+        }
+
+        h1 { font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.15; margin-bottom: 1rem; }
+        h2 { font-size: clamp(1.5rem, 3vw, 1.75rem); line-height: 1.25; margin-bottom: 1rem; }
+        h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: 0.75rem; }
+        
+        a {
+            color: var(--burgundy-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ACCESSIBILITY */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--burgundy-accent);
+            color: white;
+            padding: 8px;
+            z-index: 10000;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        *:focus-visible {
+            outline: 3px solid var(--burgundy-accent);
+            outline-offset: 3px;
+        }
+
+        /* ACCESSIBILITY TOOLBAR */
+        #a11y-toolbar {
+            background-color: var(--charcoal-text);
+            color: var(--surface-white);
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            font-size: 0.875rem;
+        }
+
+        .a11y-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .a11y-btn {
+            background: transparent;
+            border: 1px solid var(--surface-white);
+            color: var(--surface-white);
+            padding: 2px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        
+        .a11y-btn:hover {
+            background: var(--surface-white);
+            color: var(--charcoal-text);
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: sticky;
+            top: 38px; /* Below a11y bar */
+            background-color: var(--primary-navy);
+            color: var(--surface-white);
+            z-index: 100;
+            border-bottom: 3px solid var(--muted-gold);
+            padding: 16px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            color: var(--surface-white);
+            line-height: 1.2;
+        }
+
+        .brand-title {
+            font-size: 0.875rem;
+            color: var(--muted-gold);
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: var(--surface-white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--muted-gold);
+            text-decoration: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--surface-white);
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        /* LAYOUT CONTAINERS */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 5%;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header p {
+            color: var(--charcoal-text);
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
+        /* BUTTONS */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--burgundy-accent);
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #5a0010;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-navy);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 2px solid var(--primary-navy);
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        /* EXPLICIT WIREFRAME SPECS */
+        .hero-image-container {
+            width: 100%;
+            max-width: 380px;
+            min-height: 440px;
+            border-radius: 8px;
+            border: 3px solid var(--muted-gold);
+            box-shadow: 0 12px 28px rgba(10, 34, 64, 0.2);
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #1A365D 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            position: absolute;
+            top: 0; left: 0;
+            opacity: 0; /* Hidden until image is actually added */
+        }
+
+        .metric-card {
+            background-color: var(--surface-white);
+            border: 1px solid var(--border-slate);
+            border-top: 4px solid var(--burgundy-accent);
+            border-radius: 8px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(10, 34, 64, 0.1);
+        }
+        .metric-number {
+            font-family: var(--font-mono);
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+        }
+
+        .social-card {
+            background: var(--surface-white);
+            border: 1px solid var(--border-slate);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        .social-card-header {
+            background: var(--canvas-bg);
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-slate);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .social-card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .social-card-tag {
+            background: var(--primary-navy);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* SPECIFIC SECTIONS */
+        
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            background-color: var(--surface-white);
+            border-bottom: 1px solid var(--border-slate);
+        }
+        .hero-content {
+            flex: 1;
+            max-width: 700px;
+        }
+        .hero-tagline {
+            font-weight: 700;
+            color: var(--muted-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            display: block;
+            font-size: 0.875rem;
+        }
+        .hero-actions {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+        }
+
+        /* Grids */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+
+        /* Interactive Cards */
+        .surface-card {
+            background-color: var(--surface-white);
+            border: 1px solid var(--border-slate);
+            border-radius: 8px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .surface-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(10,34,64,0.12);
+        }
+        
+        /* Badges Array */
+        .badge-array {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+        .badge {
+            background-color: var(--primary-navy);
+            color: var(--surface-white);
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--muted-gold);
+        }
+        .badge span { font-size: 0.75rem; color: var(--muted-gold); font-weight: normal; margin-top: 4px;}
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--border-slate);
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            margin-left: -2px;
+        }
+        .timeline-item {
+            padding: 0 0 40px 60px;
+            position: relative;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: auto;
+            left: 10px;
+            background-color: var(--surface-white);
+            border: 4px solid var(--primary-navy);
+            top: 6px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--burgundy-accent);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Forms */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--surface-white);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-slate);
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-navy); }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-slate);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background-color: var(--canvas-bg);
+            color: var(--charcoal-text);
+        }
+        .form-control:focus { outline: 2px solid var(--primary-navy); }
+
+        /* Modal Overlay */
+        dialog {
+            margin: auto;
+            padding: 40px;
+            border: none;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 90%;
+            background: var(--surface-white);
+            color: var(--charcoal-text);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        dialog::backdrop { background: rgba(10,34,64,0.85); }
+        .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;}
+        .close-btn { background: none; border: none; cursor: pointer; color: var(--charcoal-text); padding: 8px;}
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-navy);
+            color: var(--surface-white);
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 4px solid var(--muted-gold);
+        }
+        .footer-links { margin-top: 16px; display: flex; justify-content: center; gap: 24px; }
+        .footer-links a { color: var(--muted-gold); font-size: 0.875rem; }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 1024px) {
+            .hero-section { flex-direction: column; text-align: center; }
+            .hero-actions { justify-content: center; }
+            .hero-image-container { margin: 0 auto; }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-navy);
+                padding: 20px 5%;
+                border-bottom: 3px solid var(--muted-gold);
+            }
+            nav.open { display: flex; }
+            .mobile-menu-btn { display: block; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .hero-actions { flex-direction: column; }
+            .badge-array { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link" data-i18n="skip_link">Skip to main content</a>
+
+    <!-- Top Accessibility & Language Toolbar -->
+    <div id="a11y-toolbar">
+        <div class="a11y-controls">
+            <span data-i18n="text_size">Text Size:</span>
+            <button class="a11y-btn" onclick="setTextSize(100)" aria-label="Default text size">A</button>
+            <button class="a11y-btn" onclick="setTextSize(115)" aria-label="Medium text size">A+</button>
+            <button class="a11y-btn" onclick="setTextSize(130)" aria-label="Large text size">A++</button>
+            <button class="a11y-btn" id="hc-toggle" onclick="toggleHighContrast()" aria-label="Toggle High Contrast">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a10 10 0 0 0 0 20V2z"></path>
+                </svg>
+                <span data-i18n="high_contrast">High Contrast</span>
+            </button>
+        </div>
+        <div class="lang-controls">
+            <button class="a11y-btn" onclick="setLanguage('en')" aria-label="English">EN</button> | 
+            <button class="a11y-btn" onclick="setLanguage('fr')" aria-label="Français">FR</button>
+        </div>
+    </div>
+
+    <!-- Main Header & Navigation Bar -->
+    <header>
+        <div class="brand">
+            <span class="brand-name">Rajan Sharma, CPA</span>
+            <span class="brand-title" data-i18n="brand_subtitle">Senior Public Sector Audit & Fiscal Oversight Leader</span>
+        </div>
+        
+        <button class="mobile-menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu" onclick="toggleMenu()">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+        </button>
+
+        <nav id="main-nav">
+            <a href="#profile" data-i18n="nav_profile">Profile</a>
+            <a href="#oversight" data-i18n="nav_pillars">Pillars of Oversight</a>
+            <a href="#career" data-i18n="nav_career">Career Narrative</a>
+            <a href="#insights" data-i18n="nav_insights">Policy Insights</a>
+            <a href="#ethics" data-i18n="nav_ethics">Ethics & Contact</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        
+        <!-- Hero / Institutional Positioning Section -->
+        <section id="profile" class="hero-section container">
+            <div class="hero-content">
+                <span class="hero-tagline" data-i18n="hero_tagline">Public Governance & Fiscal Stewardship</span>
+                <h1 data-i18n="hero_heading">Thirty Years of Public Audit as Nation-Building Fiscal Oversight</h1>
+                <p style="font-size: 1.25rem; font-weight: 500; margin-bottom: 24px; color: var(--primary-navy);" data-i18n="hero_subhead">Delivering rigorous financial scrutiny, value-for-money oversight, and risk mitigation across Ontario's public sector.</p>
+                <p data-i18n="hero_narrative">For over three decades as a Senior Auditor within the Ontario Ministry of Finance and a Certified Professional Accountant (CPA), Rajan Sharma has dedicated their career to protecting the integrity of public finances. By evaluating complex spending programs, leading value-for-money audits, and implementing robust enterprise risk frameworks, Rajan Sharma ensures that every public dollar is accountable, transparent, and optimized to serve the people of Ontario.</p>
+                <div class="hero-actions">
+                    <a href="#career" class="btn-primary" data-i18n="btn_explore">Explore Career Narrative</a>
+                    <a href="#insights" class="btn-secondary" data-i18n="btn_view">View Policy Insights</a>
+                </div>
+            </div>
+            
+            <div class="hero-image-container" aria-label="Portrait placeholder for Rajan Sharma">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--muted-gold)" stroke-width="1.5" style="margin-bottom: 16px;">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span style="font-family: var(--font-heading); font-size: 1.25rem;">Rajan Sharma, CPA</span>
+                <span style="font-size: 0.875rem; color: var(--muted-gold); margin-top: 8px;">Official Portrait Container</span>
+                <img src="" alt="" aria-hidden="true">
+            </div>
+        </section>
+
+        <!-- Executive Roles & Honors Matrix -->
+        <section class="container" style="padding-top: 40px; padding-bottom: 40px;">
+            <div class="section-header">
+                <h2 data-i18n="matrix_title">Executive Leadership & Recognized Achievements</h2>
+                <p data-i18n="matrix_subtitle">A distinguished record of non-partisan public service, professional governance, and financial oversight.</p>
+            </div>
+            
+            <div class="badge-array">
+                <div class="badge">Senior Executive Auditor <span>Ontario Ministry of Finance (30+ Years Service)</span></div>
+                <div class="badge">Chartered Professional Accountant (CPA) <span>Member in Good Standing, CPA Ontario</span></div>
+                <div class="badge">Lead Specialist, Value-for-Money Audits <span>Provincial Program & Transfer Payment Review</span></div>
+            </div>
+
+            <div class="grid-2">
+                <div class="surface-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--burgundy-accent)" stroke-width="2" style="margin-bottom: 16px;">
+                        <path d="M12 15l-2 5l9-9l-9-9l2 5l-9 9z" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="10"/>
+                    </svg>
+                    <h3 data-i18n="award1_title">Public Service Leadership Commendation</h3>
+                    <p data-i18n="award1_text">Recognized for outstanding oversight in public expenditure management <strong>[2021]</strong>.</p>
+                </div>
+                <div class="surface-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--burgundy-accent)" stroke-width="2" style="margin-bottom: 16px;">
+                        <path d="M12 15l-2 5l9-9l-9-9l2 5l-9 9z" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="10"/>
+                    </svg>
+                    <h3 data-i18n="award2_title">CPA Distinguished Governance Recognition</h3>
+                    <p data-i18n="award2_text">Honored for contributions to public sector accounting and fiscal integrity <strong>[2000]</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Pillars & Leadership Themes -->
+        <section id="oversight" class="container" style="background-color: var(--surface-white); border-top: 1px solid var(--border-slate); border-bottom: 1px solid var(--border-slate);">
+            <div class="section-header">
+                <h2 data-i18n="pillars_title">Core Pillars of Public Fiscal Oversight</h2>
+            </div>
+            
+            <div class="grid-4">
+                <div class="surface-card">
+                    <h3 data-i18n="pillar1_title">Value-for-Money & Program Integrity</h3>
+                    <p data-i18n="pillar1_text">Conducting objective, evidence-based evaluations of provincial programs to ensure spending produces measurable public value and operational efficiency.</p>
+                </div>
+                <div class="surface-card">
+                    <h3 data-i18n="pillar2_title">Financial Risk Mitigation</h3>
+                    <p data-i18n="pillar2_text">Identifying systemic financial risks, internal control weaknesses, and compliance gaps across complex government entities before they impact public resources.</p>
+                </div>
+                <div class="surface-card">
+                    <h3 data-i18n="pillar3_title">Public Sector Audit Modernization</h3>
+                    <p data-i18n="pillar3_text">Integrating data analytics, modern digital audit tools, and cybersecurity risk frameworks into public sector accounting and reporting.</p>
+                </div>
+                <div class="surface-card">
+                    <h3 data-i18n="pillar4_title">Intergovernmental & Transfer Stewardship</h3>
+                    <p data-i18n="pillar4_text">Overseeing transfer payment frameworks and infrastructure funding mechanisms to guarantee regional economic resilience and accountability.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Narrative -->
+        <section id="career" class="container">
+            <div class="section-header">
+                <h2 data-i18n="career_title">Chronological Career Trajectory</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">1998 – Present</span>
+                    <h3 data-i18n="phase1_title">Senior Executive Audit Leadership | Ontario Ministry of Finance</h3>
+                    <p data-i18n="phase1_body">Directing complex financial and compliance audits across major provincial ministries. Responsible for evaluating multi-billion-dollar expenditure portfolios, assessing internal controls, and briefing executive leadership on risk mitigation strategies.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">1996 – 1998</span>
+                    <h3 data-i18n="phase2_title">Lead Auditor, Value-for-Money & Transfer Payments</h3>
+                    <p data-i18n="phase2_body">Spearheaded comprehensive performance reviews of provincial grant programs, transfer payment frameworks to municipalities, and agency spending, resulting in enhanced operational guidelines.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">1986 – 1996</span>
+                    <h3 data-i18n="phase3_title">Public Sector Auditor & CPA Credentialing</h3>
+                    <p data-i18n="phase3_body">Executed financial statement audits, operational reviews, and compliance testing across government agencies while completing professional CPA designation requirements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Metrics Grid -->
+        <section class="container" style="background-color: var(--primary-navy); color: var(--surface-white); max-width: 100%;">
+            <div class="container" style="padding: 60px 5%;">
+                <div class="grid-4">
+                    <div class="metric-card">
+                        <div class="metric-number">30+</div>
+                        <div style="color: var(--charcoal-text); font-weight: 600;" data-i18n="metric1">Years of Public Audit Leadership</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">$10B+</div>
+                        <div style="color: var(--charcoal-text); font-weight: 600;" data-i18n="metric2">Public Expenditure Portfolio Reviewed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">150+</div>
+                        <div style="color: var(--charcoal-text); font-weight: 600;" data-i18n="metric3">Comprehensive Audits Executed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">100%</div>
+                        <div style="color: var(--charcoal-text); font-weight: 600;" data-i18n="metric4">Commitment to Non-Partisan CPA Standards</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canadian Policy Commentary & Social Insights -->
+        <section id="insights" class="container">
+            <div class="section-header">
+                <h2 data-i18n="commentary_title">Policy Commentary & Social Insights</h2>
+                <p data-i18n="commentary_subtitle">Analytical perspectives on Canadian public finance, transfer payment accountability, and fiscal policy.</p>
+            </div>
+            
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px;">
+                <span class="social-card-tag">#ValueForMoney</span>
+                <span class="social-card-tag">#PublicAccounts</span>
+                <span class="social-card-tag">#FiscalTransparency</span>
+                <span class="social-card-tag">#OntarioEconomy</span>
+                <span class="social-card-tag">#EmergingRisk</span>
+            </div>
+
+            <div class="grid-2">
+                <!-- Post 1 -->
+                <div class="social-card">
+                    <div class="social-card-header">
+                        <span style="font-weight: 600; color: var(--primary-navy);">Rajan Sharma, CPA</span>
+                        <span style="font-size: 0.875rem; color: #6b7280;">Sept 12, 2026</span>
+                    </div>
+                    <div class="social-card-body">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;" data-i18n="post1_title">Modernizing Value-for-Money Audits in Public Infrastructure</h3>
+                        <p data-i18n="post1_text">As public infrastructure investments expand, traditional financial compliance audits must be paired with continuous value-for-money assessments. Evaluating long-term lifecycle costs ensures public funds generate maximum value...</p>
+                    </div>
+                    <div style="padding: 16px 20px; border-top: 1px solid var(--border-slate); background: var(--canvas-bg);">
+                        <a href="#" style="display: flex; align-items: center; gap: 8px;">
+                            View Analysis 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="social-card">
+                    <div class="social-card-header">
+                        <span style="font-weight: 600; color: var(--primary-navy);">Rajan Sharma, CPA</span>
+                        <span style="font-size: 0.875rem; color: #6b7280;">Aug 28, 2026</span>
+                    </div>
+                    <div class="social-card-body">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;" data-i18n="post2_title">Strengthening Transparency in Public Accounts Reporting</h3>
+                        <p data-i18n="post2_text">Clear, accessible financial reporting is fundamental to public trust. Enhancing the readability of provincial public accounts enables citizens and legislators to effectively scrutinize public spending...</p>
+                    </div>
+                    <div style="padding: 16px 20px; border-top: 1px solid var(--border-slate); background: var(--canvas-bg);">
+                        <a href="#" style="display: flex; align-items: center; gap: 8px;">
+                            View Analysis 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications & Thought Leadership -->
+        <section class="container" style="background-color: var(--surface-white); border-top: 1px solid var(--border-slate);">
+            <div class="section-header">
+                <h2 data-i18n="thought_title">Thought Leadership & Publications</h2>
+            </div>
+            <div class="surface-card" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+                <span style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--burgundy-accent); font-weight: 700;">EXECUTIVE WHITE PAPER</span>
+                <h3 style="font-size: 1.5rem;" data-i18n="article1_title">Frameworks for Enterprise Risk Management in Provincial Governance</h3>
+                <p data-i18n="article1_abstract">An examination of how modern risk management frameworks can be integrated into public sector budgeting to prevent fiscal leakage and improve program outcomes.</p>
+                <div>
+                    <button class="btn-primary" onclick="document.getElementById('thought-modal').showModal()" data-i18n="btn_read_full">Read Full Analysis</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governance, CPA Ethics & Model Disclosures -->
+        <section id="ethics" class="container" style="padding-bottom: 20px;">
+            <div class="section-header">
+                <h2 data-i18n="ethics_title">Governance, Ethics & Professional Disclosures</h2>
+            </div>
+            <div style="background-color: var(--canvas-bg); border-left: 4px solid var(--muted-gold); padding: 32px; max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; font-style: italic;" data-i18n="ethics_statement">
+                    "Rajan Sharma operates under the strictest standards of professional integrity, fully adhering to the CPA Code of Professional Conduct and non-partisan public service principles. All work is conducted with objective, evidence-based independence."
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact & Institutional Engagement -->
+        <section class="container" style="padding-top: 20px;">
+            <div class="section-header">
+                <h2 data-i18n="contact_title">Official Inquiry & Correspondence</h2>
+                <p data-i18n="contact_text">For inquiries regarding public finance research, speaking engagements, or governance discussions, please use the secure correspondence form below.</p>
+            </div>
+            
+            <div class="grid-2" style="max-width: 1000px; margin: 0 auto;">
+                <div class="surface-card" style="display: flex; flex-direction: column; gap: 16px;">
+                    <h3>Office Contact</h3>
+                    <p><strong>Email:</strong> rajan.sharma@example.com</p>
+                    <p><strong>Phone:</strong> 647-221-7016</p>
+                    <p><strong>Address:</strong><br>18 McKennon Street<br>Markham, Ontario<br>Canada</p>
+                    
+                    <div style="margin-top: auto; display: flex; gap: 16px;">
+                        <a href="#" aria-label="LinkedIn Profile" class="btn-secondary" style="padding: 8px 16px;">LinkedIn</a>
+                        <a href="#" aria-label="X Profile" class="btn-secondary" style="padding: 8px 16px;">X (Twitter)</a>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="#" onsubmit="event.preventDefault(); alert('Form submitted successfully.');">
+                    <div class="form-group">
+                        <label for="name" class="form-label" data-i18n="form_name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="org" class="form-label" data-i18n="form_org">Organization / Affiliation</label>
+                        <input type="text" id="org" class="form-control" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="topic" class="form-label" data-i18n="form_topic">Topic</label>
+                        <input type="text" id="topic" class="form-control" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label" data-i18n="form_msg">Message</label>
+                        <textarea id="message" class="form-control" rows="4" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;" data-i18n="btn_submit">Submit Inquiry</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rajan Sharma, CPA. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#" data-i18n="footer_a11y">Accessibility Statement</a>
+            <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+            <a href="#" data-i18n="footer_data">Ontario Open Data</a>
+        </div>
+    </footer>
+
+    <!-- Modal Viewer -->
+    <dialog id="thought-modal" aria-labelledby="modal-title">
+        <div class="modal-header">
+            <h2 id="modal-title" style="margin: 0; font-size: 1.5rem;" data-i18n="article1_title">Frameworks for Enterprise Risk Management in Provincial Governance</h2>
+            <button class="close-btn" onclick="document.getElementById('thought-modal').close()" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div style="max-height: 60vh; overflow-y: auto; padding-right: 16px;">
+            <p style="font-weight: bold; margin-bottom: 16px;" data-i18n="article1_abstract">An examination of how modern risk management frameworks can be integrated into public sector budgeting to prevent fiscal leakage and improve program outcomes.</p>
+            <p style="margin-bottom: 16px;">[Full text analysis placeholder...] Enterprise risk management (ERM) in the public sector involves identifying, analyzing, and responding to risk factors throughout the life of a government program. Proper implementation ensures that institutional objectives are met with efficiency and transparency.</p>
+            <p>By establishing rigorous internal controls and conducting regular value-for-money assessments, ministries can proactively prevent fiscal leakages, ensuring taxpayer dollars are maximized to serve the public interest effectively.</p>
+        </div>
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-slate);">
+            <a href="#" class="btn-secondary" style="font-size: 0.875rem;">Download PDF Summary</a>
+        </div>
+    </dialog>
+
+    <script>
+        // Accessibility - Text Resizing
+        function setTextSize(percentage) {
+            document.documentElement.style.fontSize = percentage + '%';
+        }
+
+        // Accessibility - High Contrast Toggle
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            const isHighContrast = document.body.classList.contains('high-contrast');
+            const hcBtn = document.getElementById('hc-toggle');
+            hcBtn.setAttribute('aria-pressed', isHighContrast);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const btn = document.querySelector('.mobile-menu-btn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            
+            btn.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('open');
+        }
+
+        // Close modal when clicking outside
+        const dialog = document.getElementById('thought-modal');
+        dialog.addEventListener('click', (e) => {
+            const dialogDimensions = dialog.getBoundingClientRect();
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                dialog.close();
+            }
+        });
+
+        // Simple Dictionary for UI translation (EN/FR)
+        const i18n = {
+            'en': {
+                'skip_link': 'Skip to main content',
+                'text_size': 'Text Size:',
+                'high_contrast': 'High Contrast',
+                'brand_subtitle': 'Senior Public Sector Audit & Fiscal Oversight Leader',
+                'nav_profile': 'Profile',
+                'nav_pillars': 'Pillars of Oversight',
+                'nav_career': 'Career Narrative',
+                'nav_insights': 'Policy Insights',
+                'nav_ethics': 'Ethics & Contact',
+                'hero_tagline': 'Public Governance & Fiscal Stewardship',
+                'hero_heading': 'Thirty Years of Public Audit as Nation-Building Fiscal Oversight',
+                'hero_subhead': 'Delivering rigorous financial scrutiny, value-for-money oversight, and risk mitigation across Ontario\'s public sector.',
+                'btn_explore': 'Explore Career Narrative',
+                'btn_view': 'View Policy Insights',
+                'matrix_title': 'Executive Leadership & Recognized Achievements',
+                'matrix_subtitle': 'A distinguished record of non-partisan public service, professional governance, and financial oversight.',
+                'pillars_title': 'Core Pillars of Public Fiscal Oversight',
+                'career_title': 'Chronological Career Trajectory',
+                'commentary_title': 'Policy Commentary & Social Insights',
+                'thought_title': 'Thought Leadership & Publications',
+                'ethics_title': 'Governance, Ethics & Professional Disclosures',
+                'contact_title': 'Official Inquiry & Correspondence',
+                'btn_submit': 'Submit Inquiry',
+                'footer_a11y': 'Accessibility Statement',
+                'footer_privacy': 'Privacy Policy',
+                'footer_data': 'Ontario Open Data'
+            },
+            'fr': {
+                'skip_link': 'Passer au contenu principal',
+                'text_size': 'Taille du texte:',
+                'high_contrast': 'Contraste Élevé',
+                'brand_subtitle': 'Leader Principal de l\'Audit du Secteur Public et de la Surveillance Financière',
+                'nav_profile': 'Profil',
+                'nav_pillars': 'Piliers de Surveillance',
+                'nav_career': 'Parcours Professionnel',
+                'nav_insights': 'Analyses Politiques',
+                'nav_ethics': 'Éthique et Contact',
+                'hero_tagline': 'Gouvernance Publique et Gestion Financière',
+                'hero_heading': 'Trente Ans d\'Audit Public comme Surveillance Financière pour Bâtir la Nation',
+                'hero_subhead': 'Assurer un examen financier rigoureux, une surveillance de l\'optimisation des ressources et l\'atténuation des risques dans le secteur public de l\'Ontario.',
+                'btn_explore': 'Explorer le Parcours',
+                'btn_view': 'Voir les Analyses',
+                'matrix_title': 'Leadership Exécutif et Réalisations Reconnues',
+                'matrix_subtitle': 'Un dossier distingué de service public non partisan, de gouvernance professionnelle et de surveillance financière.',
+                'pillars_title': 'Piliers Fondamentaux de la Surveillance Financière Publique',
+                'career_title': 'Trajectoire Professionnelle Chronologique',
+                'commentary_title': 'Commentaires Politiques et Analyses Sociales',
+                'thought_title': 'Leadership Éclairé et Publications',
+                'ethics_title': 'Gouvernance, Éthique et Divulgations Professionnelles',
+                'contact_title': 'Demande Officielle et Correspondance',
+                'btn_submit': 'Soumettre la demande',
+                'footer_a11y': 'Déclaration d\'Accessibilité',
+                'footer_privacy': 'Politique de Confidentialité',
+                'footer_data': 'Données Ouvertes de l\'Ontario'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.textContent = i18n[lang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
