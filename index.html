@@ -1204,7 +1204,7 @@ body.high-contrast .honour-card { border-top-color: #FFFF00; }
 <div class="visually-hidden announcer" id="announcer" aria-live="polite"></div>
 
 <div id="a11y-wrapper" role="region" aria-label="Display and language settings" data-i18n-aria="tb.region">
-  <button class="a11y-toggle" id="a11y-toggle" type="button" aria-expanded="true" aria-controls="a11y-toolbar" aria-label="Hide or show display options" data-i18n-aria="tb.toggleName"><span data-i18n="tb.toggle">Hide/Show Options</span></button>
+  <button class="a11y-toggle" id="a11y-toggle" type="button" aria-expanded="true" aria-controls="a11y-toolbar"><span data-i18n="tb.toggle">Accessibility</span></button>
   <div id="a11y-toolbar">
     <div class="a11y-controls">
       <div class="toolbar-group" role="group" aria-labelledby="ts-label">
@@ -1242,8 +1242,7 @@ body.high-contrast .honour-card { border-top-color: #FFFF00; }
     'nav.articles': 'Articles',
     'nav.contact': 'Contact',
     'tb.region': 'Paramètres d’affichage et de langue',
-    'tb.toggle': 'Afficher/Masquer les options',
-    'tb.toggleName': 'Afficher ou masquer les options d’affichage',
+    'tb.toggle': 'Accessibilité',
     'tb.textSize': 'Taille du texte :',
     'tb.size100': 'Taille de texte par défaut',
     'tb.size115': 'Taille de texte moyenne',
@@ -1746,15 +1745,39 @@ body.high-contrast .honour-card { border-top-color: #FFFF00; }
     store('rs-theme', on ? 'high' : 'default');
     if (speak) { announce(msg(on ? 'hcOn' : 'hcOff')); }
   }
-  function setToolbarHidden(hidden) {
+  function setToolbarHidden(hidden, remember) {
     var wrap = $('#a11y-wrapper'), bar = $('#a11y-toolbar'), tab = $('#a11y-toggle');
     if (hidden && bar.contains(doc.activeElement)) { tab.focus(); }
     wrap.classList.toggle('hidden', hidden);
     bar.inert = hidden;
     if (hidden) { bar.setAttribute('inert', ''); } else { bar.removeAttribute('inert'); }
     tab.setAttribute('aria-expanded', String(!hidden));
-    store('rs-toolbar', hidden ? 'hidden' : 'shown');
+    if (remember !== false) { store('rs-toolbar', hidden ? 'hidden' : 'shown'); }
     measure();
+  }
+
+  /* On phones the bar tucks itself away after 5 seconds or at the first scroll,
+     unless the visitor has already chosen to show or hide it, or is using it */
+  var autoHideTimer = null;
+  function cancelAutoHide() {
+    clearTimeout(autoHideTimer);
+    autoHideTimer = null;
+    window.removeEventListener('scroll', autoHideNow);
+  }
+  function autoHideNow() {
+    var wrap = $('#a11y-wrapper');
+    cancelAutoHide();
+    if (wrap.contains(doc.activeElement) || wrap.classList.contains('hidden')) { return; }
+    setToolbarHidden(true, false);
+  }
+  function setupAutoHide() {
+    var phone = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
+    if (!phone || load('rs-toolbar')) { return; }
+    autoHideTimer = setTimeout(autoHideNow, 5000);
+    window.addEventListener('scroll', autoHideNow, { passive: true });
+    var wrap = $('#a11y-wrapper');
+    wrap.addEventListener('focusin', cancelAutoHide);
+    wrap.addEventListener('pointerdown', cancelAutoHide);
   }
 
   /* ===== 22. Measured offsets ===== */
@@ -2224,14 +2247,15 @@ body.high-contrast .honour-card { border-top-color: #FFFF00; }
     var f = Number(load('rs-font'));
     setTextSize(f === 115 || f === 130 ? f : 100, false);
     setContrast(load('rs-theme') === 'high', false);
-    setToolbarHidden(load('rs-toolbar') === 'hidden');
+    setToolbarHidden(load('rs-toolbar') === 'hidden', false);
+    setupAutoHide();
     $('#year').textContent = String(new Date().getFullYear());
 
     /* toolbar */
     $$('.size-btn').forEach(function (b) { b.addEventListener('click', function () { setTextSize(Number(b.getAttribute('data-size')), true); }); });
     $('#contrast-btn').addEventListener('click', function () { setContrast(!body.classList.contains('high-contrast'), true); });
     $$('.lang-btn').forEach(function (b) { b.addEventListener('click', function () { if (b.getAttribute('data-lang') !== lang) { setLanguage(b.getAttribute('data-lang'), true); } }); });
-    $('#a11y-toggle').addEventListener('click', function () { setToolbarHidden(!$('#a11y-wrapper').classList.contains('hidden')); });
+    $('#a11y-toggle').addEventListener('click', function () { cancelAutoHide(); setToolbarHidden(!$('#a11y-wrapper').classList.contains('hidden'), true); });
 
     /* menu */
     $('#menu-btn').addEventListener('click', function () { setMenu(!$('#main-nav').classList.contains('open'), false); });
