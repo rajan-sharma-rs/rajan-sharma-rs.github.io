@@ -161,15 +161,17 @@ header { gap: 16px; }
 .brand { min-width: 0; }
 nav a { white-space: nowrap; }
 .mobile-menu-btn { width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 4px; flex: none; }
-html.nav-compact nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--surface-navy); padding: 12px 5% 20px; border-bottom: 3px solid var(--muted-gold); gap: 0; max-height: calc(100vh - var(--header-h)); max-height: calc(100dvh - var(--header-h)); overflow-y: auto; }
-html.nav-compact nav.open { display: flex; }
+html.nav-compact #main-nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--surface-navy); padding: 12px 5% 20px; border-bottom: 3px solid var(--muted-gold); gap: 0; max-height: calc(100vh - var(--header-h)); max-height: calc(100dvh - var(--header-h)); overflow-y: auto; }
+html.nav-compact #main-nav.open { display: flex; }
 html.nav-compact .mobile-menu-btn { display: inline-flex; }
 @media (max-width: 1024px) {
-  nav { background-color: var(--surface-navy); padding: 12px 5% 20px; gap: 0; max-height: calc(100vh - var(--header-h)); max-height: calc(100dvh - var(--header-h)); overflow-y: auto; }
+  #main-nav { background-color: var(--surface-navy); padding: 12px 5% 20px; gap: 0; max-height: calc(100vh - var(--header-h)); max-height: calc(100dvh - var(--header-h)); overflow-y: auto; }
   .mobile-menu-btn { display: inline-flex; }
 }
-@media (max-width: 1024px) { nav a { min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 1.0625rem; } nav a:last-child { border-bottom: 0; } }
-html.nav-compact nav a { min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.12); }
+@media (max-width: 1024px) { #main-nav a { min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 1.0625rem; } #main-nav a:last-child { border-bottom: 0; } }
+/* The footer links are not the main menu: keep them in the footer at every width */
+footer nav.footer-links { display: flex; position: static; width: auto; max-height: none; overflow: visible; background: none !important; padding: 0; border: 0 !important; }
+html.nav-compact #main-nav a { min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,.12); }
 @media (max-width: 640px) {
   header { padding: 10px 20px; min-height: 64px; }
   .brand-name { font-size: 1.25rem; }
@@ -283,7 +285,9 @@ body.high-contrast .stack-table tbody th { background: transparent !important; c
   .table-wrap { overflow: visible; background: transparent; border: 0; }
   .stack-table, .stack-table tbody, .stack-table tr, .stack-table td, .stack-table tbody th { display: block; width: 100%; }
   .stack-table caption { display: block; padding: 0 0 14px; }
-  .stack-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); }
+  .stack-table thead, .stack-table thead tr, .stack-table thead th { display: block; }
+  .stack-table thead { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0 0 0 0); -webkit-clip-path: inset(50%); clip-path: inset(50%); white-space: nowrap; border: 0 !important; }
+  .stack-table thead th { background: transparent !important; color: transparent !important; padding: 0 !important; border: 0 !important; }
   .stack-table tbody tr { display: flex; flex-direction: column; background: var(--surface) !important; border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; margin-bottom: 12px; box-shadow: var(--sh-1); }
   .career-table tbody tr.group-start { background: var(--navy-tint) !important; }
   .stack-table tbody th { order: -1; border: 0; padding: 0 0 8px; font-family: var(--font-heading); font-size: 1.125rem; }
@@ -551,7 +555,8 @@ body.high-contrast .honour-card { border-top-color: #FFFF00; }
   .stack-table { display: table !important; table-layout: fixed; width: 100%; font-size: 8pt; border-collapse: collapse; }
   .stack-table caption { display: table-caption !important; padding: 0 0 3pt; }
   .stack-table caption h3 { font-size: 10.5pt; }
-  .stack-table thead { display: table-header-group !important; position: static; width: auto; height: auto; clip: auto; clip-path: none; overflow: visible; }
+  .stack-table thead { display: table-header-group !important; position: static !important; width: auto !important; height: auto !important; margin: 0 !important; clip: auto; -webkit-clip-path: none; clip-path: none; overflow: visible !important; white-space: normal; }
+  .stack-table thead th { color: #000000 !important; padding: 2pt 4pt !important; border: 0.5pt solid #999999 !important; font-weight: 700; }
   .stack-table tbody { display: table-row-group !important; }
   .stack-table tr { display: table-row !important; border: 0; margin: 0; padding: 0; break-inside: avoid; page-break-inside: avoid; }
   .stack-table th, .stack-table td { display: table-cell !important; padding: 2pt 4pt !important; border: 0.5pt solid #999999 !important; font-size: 8pt; width: auto; }
